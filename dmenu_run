@@ -1,2 +1,2 @@
 #!/bin/sh
-dmenu_path | dmenu "$@" | ${SHELL:-"/bin/sh"} &
+(trap - SIGINT; dmenu_path | dmenu "$@" | ${SHELL:-"/bin/sh"}) &

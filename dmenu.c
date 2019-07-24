@@ -7,6 +7,7 @@
 #include <strings.h>
 #include <time.h>
 #include <unistd.h>
+#include <signal.h>
 
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
@@ -588,6 +589,7 @@ run(void)
 static void
 setup(void)
 {
+	signal(SIGINT, SIG_DFL);
 	int x, y, i, j;
 	unsigned int du;
 	XSetWindowAttributes swa;
